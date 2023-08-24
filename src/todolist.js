@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import "./todolist.css"
 
 
@@ -6,6 +6,7 @@ const Todo = () => {
 
   const [newTask, setNewTask] = useState('');
   const [tasks, setTasks] = useState([]);
+
 
 
   const addTask = () => {
@@ -20,6 +21,7 @@ const Todo = () => {
     updatedTasks.splice(index, 1);
     setTasks(updatedTasks);
   };
+
 
   
   
@@ -39,7 +41,9 @@ const Todo = () => {
       <ul>
         {tasks.map((task, index) => (
           <li key={index}>
+            
             {task}
+      
             <button className='del-btn' onClick={() => deleteTask(index)}>X</button>
           </li>
         ))}
